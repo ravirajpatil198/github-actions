@@ -1,13 +1,15 @@
-# creating ci pipeline for app.py file and checking lint 
 name: autolinter
+
 on: 
- push: 
-   paths: "*.py"
+  push: 
+    paths: 
+      - "*.py"
+
 jobs:
   code: 
-     runs-on: ubuntu_latest
-  steps:
-      - name: checkout
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -20,4 +22,3 @@ jobs:
 
       - name: Run Ruff linter
         run: ruff check .
-  
