@@ -1,0 +1,19 @@
+# name of the work flow
+name: hello
+
+# run when someone trigger automotically
+on: 
+  push:
+    branches: [main]
+
+  pull_request: 
+       branches: [main]
+jobs:
+  greet: #this is the name of job
+    runs-on: ubuntu-latest  #every job rubs on the runner
+    steps:
+        - name: print hello everyone
+          run: echo "print hello"
+
+          
+  
