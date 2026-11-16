@@ -21,4 +21,4 @@ jobs:
         run: pip install ruff
 
       - name: Run Ruff linter
-        run: ruff che
+        run: ruff check --fix .
