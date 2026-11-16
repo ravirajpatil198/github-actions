@@ -1,0 +1,44 @@
+# creating cicd pipeline for build,test,deploy
+name: cicd
+
+on:
+   workflow_dispatch: 
+    inputs:
+      environment:
+        description: This is the environment value where this workflow runs
+        default: 'dev'
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
+jobs:
+  code:
+     runs-on: ubuntu-latest
+     steps:
+      - name: pull code from repo
+        run: echo "code clone from github"
+  build:
+    needs: [code]
+    runs-on: ubuntu-latest
+    steps:
+      - name: code build
+        run: echo "build sucess"
+  test:
+     needs: [build]
+     runs-on: ubuntu-latest
+     steps:
+       - name: test the code
+         run: echo "test completed"
+  deploy:
+     if: inputs.environment == 'dev'
+     needs: [build,test]
+     runs-on: ubuntu-latest
+     steps:
+       - name: deploy the code
+         run: echo "deploy completed"
+         
+
+
+        
