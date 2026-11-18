@@ -24,7 +24,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: ravirajpatil198/app:latest          
+          tags: 
+            ${{ vars.DOCKERHUB_USERNAME }}/app:latest
+            ${{ vars.DOCKERHUB_USERNAME }}/app:${{ github.sha }}
 
 
 
