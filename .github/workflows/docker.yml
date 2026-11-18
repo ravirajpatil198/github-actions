@@ -24,4 +24,11 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/app:latest           
+          tags: ravirajpatil198/app:latest          
+
+
+
+
+
+
+
