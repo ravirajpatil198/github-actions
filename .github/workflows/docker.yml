@@ -2,7 +2,7 @@
 name: build-push
 
 on: 
-  workflow_call:
+  workflow_dispatch: 
 jobs:
   docker:
     runs-on: ubuntu-latest
