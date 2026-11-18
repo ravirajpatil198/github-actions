@@ -7,7 +7,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: chekcout
+      - name: chekcout 
         uses: actions/checkout@v6
       
       - name: Login to Docker Hub
