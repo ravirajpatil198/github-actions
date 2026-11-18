@@ -25,7 +25,7 @@ jobs:
           context: .
           push: true
           tags: 
-            ${{ vars.DOCKERHUB_USERNAME }}/app:latest
+            ${{ vars.DOCKERHUB_USERNAME }}/app:latest 
             ${{ vars.DOCKERHUB_USERNAME }}/app:${{ github.sha }}
 
 
